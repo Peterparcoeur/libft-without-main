@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 12:46:09 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 22:17:17 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/25 13:27:13 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,17 @@ char		**ft_strsplit(char *s, char c)
 	remember = 0;
 	ptr = NULL;
 	numberofword = lenght_word(s, c);
-	if (!(ptr = malloc(sizeof(char**) * numberofword)))
+	if (!(ptr = malloc(sizeof(char**) * numberofword + 1)))
 		return (NULL);
 	while (s[i])
 	{
 		remember = i;
 		while (s[i] != c && s[i] != '\0')
 			i++;
-		if (!(ptr[j] = malloc(sizeof(char*) * (i - remember + 1))))
+		if (!(ptr[j] = malloc(sizeof(char) * (i - remember + 1))))
 			return (NULL);
 		if (j < numberofword)
-			ft_strncpy(ptr[j], s, i - remember);
+			ft_strncpy(ptr[j], &s[remember], i - remember);
 		while (s[i] == c)
 			i++;
 		j++;

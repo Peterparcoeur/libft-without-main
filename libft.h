@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 14:52:17 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/21 14:52:33 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/25 12:36:41 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ typedef struct s_list
 }    t_list;
 
 int    ft_atoi(const char *str);
-int    ft_islower(int c);
-int    ft_isupper(int c);
 int    ft_isalpha(int c);
 int    ft_isdigit(int c);
 int    ft_isalnum(int c);
@@ -48,7 +46,6 @@ size_t   ft_strlen(const char *str);
 char   *ft_strncat(char *dest, const char *src, size_t nb);
 char   *ft_strstr(const char *str, const char *to_find);
 char   *ft_strchr(const char *s, int c);
-char   *ft_strrev(char *str);
 char   *ft_strrchr(const char *s, int c);
 char   *ft_strnstr(const char *str, const char *to_find, size_t len);
 void   *ft_memset(void *b, int c, size_t len);
@@ -75,19 +72,12 @@ int    ft_strequ(char const *s1, char const *s2);
 int    ft_strnequ(char const *s1, char const *s2, size_t n);
 char   *ft_strsub(char const *s, unsigned int start, size_t len);
 char   *ft_strjoin(char const *s1, char const *s2);
-unsigned int ft_strcntfirstchar(char *str, const char *charset);
-unsigned int ft_strcntlastchar(char *str, const char *charset);
 char   *ft_strtrim(char const *s);
-char   **ft_strsplitchrset(char *str, const char *charset);
-void   *ft_dup(void const *content, size_t content_size);
 t_list   *ft_lstnew(void const *content, size_t content_size);
 void   ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void   ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void   ft_lstadd(t_list **alst, t_list *new);
 void   ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list   *ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void   ft_lstaddend(t_list **alst, t_list *new);
-int    ft_atoi_base(char *str, char *base);
-char   *ft_itoa_base(int value, char *base);
 
 #endif

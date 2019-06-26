@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_strequ(char *s1, char *s2)
+int		ft_strequ(const char *s1, const char *s2)
 {
 	int	i;
 

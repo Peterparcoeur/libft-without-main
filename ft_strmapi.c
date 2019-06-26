@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char		*ft_strmapi(char *s, char (*f)(unsigned int, char))
+char		*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	char	*str;
@@ -28,7 +28,7 @@ char		*ft_strmapi(char *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 	{
-		str[i] = f(i, s);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	return (str);

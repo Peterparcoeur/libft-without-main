@@ -12,7 +12,7 @@
 
 NAME=libft.a
 
-SRC=ft_memalloc.c ft_putstr_fd.c ft_strmapi.c \
+SRCS=ft_memalloc.c ft_putstr_fd.c ft_strmapi.c \
 	ft_atoi.c ft_memccpy.c ft_strcat.c ft_strncat.c \
 	ft_bzero.c ft_memchr.c ft_strchr.c ft_strncmp.c \
 	ft_isalnum.c ft_memcmp.c ft_strclr.c ft_strncpy.c \
@@ -49,14 +49,14 @@ INCLUDES=./
 all: $(NAME)
 
 $(NAME): $(SRCS) libft.h
-	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+	gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 
 clean:
-	@/bin/rm -f $(OBJECTS)
+	/bin/rm -f $(OBJECTS)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all

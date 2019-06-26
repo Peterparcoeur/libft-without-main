@@ -12,21 +12,7 @@
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dst, const char *src, size_t len)
-{
-	int 	i;
-
-	i = 0;
-	while (src[i] && i < len)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-int			lenght_word(char *s, char c)
+static int			length_word(char *s, char c)
 {
 	int 	i;
 	int 	j;
@@ -48,7 +34,7 @@ int			lenght_word(char *s, char c)
 	return (j);
 }
 
-char		**ft_strsplit(char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	int		i;
 	int		j;
@@ -60,7 +46,7 @@ char		**ft_strsplit(char *s, char c)
 	j = 0;
 	remember = 0;
 	ptr = NULL;
-	numberofword = lenght_word(s, c);
+	numberofword = length_word((char *)s, c);
 	if (!(ptr = malloc(sizeof(char**) * numberofword + 1)))
 		return (NULL);
 	while (s[i])

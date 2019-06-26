@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_strequ(char *s1, char *s2, size_t n)
+int	ft_strnequ(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] != '\0' && s2[i] != '\0' && i < n)

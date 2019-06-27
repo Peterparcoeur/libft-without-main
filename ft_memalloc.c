@@ -16,8 +16,12 @@ void	*ft_memalloc(size_t size)
 {
 	void	*str;
 
-	if (!(str = malloc(sizeof(void *) * (size + 1))))
+	if (!(str = malloc(sizeof(void *) * (size /*+ 1*/)))) // CEST PAS UNE STRING ATTENTION
 		return (NULL);
+	/*
 	str = 0;
+	MAIS WTF CEST QUOI CA
+	*/
+	ft_bzero(str, size);
 	return (str);
 }

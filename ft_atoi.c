@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#define	ATOI str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r'
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)
@@ -21,13 +19,16 @@ int	ft_atoi(const char *str)
 	int new;
 
 	i = 0;
-	while (ATOI)
+	new = 0;
+	negative = 1;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+	|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
 	if (str[i] == '-')
 		negative = -1;
 	if (str[i] == '+' || str[i] == '-')
 		i++;
-	while (str[i] > 47 && str[i] < 58)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
 		new = new * 10;
 		new = new + str[i] - 48;

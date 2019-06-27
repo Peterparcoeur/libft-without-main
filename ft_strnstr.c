@@ -21,13 +21,13 @@ size_t len)
 	char	*ptr;
 
 	i = 0;
-	j = 0;
-	if (needle[j] == '\0' && i < len)
+	if (needle[i] == '\0' && i < len)
 		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)
 	{
+		j = 0;
 		remember = i;
-		while (haystack[i] == needle[j] && i < len)
+		while (needle[j] && i < len && haystack[i] == needle[j])
 		{
 			i++;
 			j++;
@@ -35,9 +35,8 @@ size_t len)
 		ptr = (char *)&haystack[remember];
 		if (needle[j] == '\0')
 			return (ptr);
+		i = remember;
 		i++;
-		if (haystack[i] == '\0')
-			return (NULL);
 	}
 	return (NULL);
 }

@@ -14,13 +14,17 @@
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	if (nb < 0)
-		nb = -nb;
-	if (nb >= 10)
+	if (nb == -2147483648)
 	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	else
-		ft_putchar_fd(nb + 48, fd);
+	if (nb < 0)
+	{
+		nb *= -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd((nb % 10) + 48, fd);
 }

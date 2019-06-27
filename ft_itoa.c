@@ -5,44 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:51:52 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 20:29:28 by pbodin           ###   ########.fr       */
+/*   Created: 2019/06/27 19:44:08 by pbodin            #+#    #+#             */
+/*   Updated: 2019/06/27 19:44:10 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
+	int		size;
+	int		reminder;
 	char	*str;
-	char	*ptr;
-	int		i;
-	int		reste;
-	int		j;
+	int		sign;
 
-	str = NULL;
-	ptr = NULL;
-	i = 0;
-	j = 0;
-	if (!(str = malloc(sizeof(char) * (n + 1))))
+	if (n == 0)
+		return (ft_strdup("0"));
+	size = ft_intlen(n) + 1;
+	sign = (n < 0) ? -1 : 1;
+	if (n >= 0)
+		size--;
+	if (!(str = ft_strnew(size)))
 		return (NULL);
-	if (!(ptr = malloc(sizeof(char) * (n + 1))))
-		return (NULL);
-	while (n > 10)
+	str[size--] = '\0';
+	while (n != 0 && size >= 0)
 	{
-		reste = n % 10;
-		n = n / 10;
-		str[i] = (char)reste + 48;
-		i++;
+		reminder = (n % 10) * sign;
+		str[size--] = (reminder > 9) ? (reminder - 10) + 'a' : reminder + '0';
+		n /= 10;
 	}
-	str[i] = (char)n + 48;
-	str[i + 1] = '\0';
-	while (i >= 0)
-	{
-		ptr[j] = str[i];
-		i--;
-		j++;
-	}
-	ptr[j + 1] = '\0';
-	return (ptr);
+	if (sign < 0)
+		str[size] = '-';
+	return (str);
 }

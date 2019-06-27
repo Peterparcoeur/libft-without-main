@@ -6,33 +6,38 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 13:15:15 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 22:22:59 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/27 19:49:05 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(const char *s)
+char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*new;
 
-	i = 0;
-	j = 0;
-	while (s[i])
-		i++;
-	if (!(str = malloc(sizeof(char) * i + 1)))
+	if (!s)
 		return (NULL);
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == ' ' || s[i] == ',' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		str[j] = s[i];
+	k = ft_strlen(s) - 1;
+	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
+	if (s[i] == '\0')
+		return (new = ft_strdup(""));
+	while (k > 0 && (s[k] == ' ' || s[k] == '\n' || s[k] == '\t'))
+		k--;
+	if (!(new = (char *)malloc(sizeof(char) * (k - i + 2))))
+		return (NULL);
+	new[k - i + 1] = '\0';
+	j = 0;
+	k = k - i + 1;
+	while (j < k && s[i])
+	{
+		new[j] = s[i++];
 		j++;
 	}
-	str[j] = '\0';
-	return (str);
+	return (new);
 }

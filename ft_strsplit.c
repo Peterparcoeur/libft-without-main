@@ -5,63 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:46:09 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/25 13:27:13 by pbodin           ###   ########.fr       */
+/*   Created: 2019/06/27 19:17:47 by pbodin            #+#    #+#             */
+/*   Updated: 2019/06/27 19:46:57 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			length_word(char *s, char c)
-{
-	int 	i;
-	int 	j;
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if ((s[i] >= 96 && s[i] <= 123) || (s[i] >= 64 && s[i] <= 91))
-			j++;
-		while (s[i] != c)
-		{
-			if (s[i] == '\0')
-				return (j);
-			i++;
-		}
-		i++;
-	}
-	return (j);
-}
-
-char		**ft_strsplit(const char *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		remember;
-	char	**ptr;
-	int		numberofword;
+	int		k;
+	char	**t;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
-	remember = 0;
-	ptr = NULL;
-	numberofword = length_word((char *)s, c);
-	if (!(ptr = malloc(sizeof(char**) * numberofword + 1)))
+	if (!(t = (char **)malloc(sizeof(char*) * (ft_wrdc((char *)s, c) + 1))))
 		return (NULL);
 	while (s[i])
 	{
-		remember = i;
-		while (s[i] != c && s[i] != '\0')
+		while (s[i] == c && s[i])
 			i++;
-		if (!(ptr[j] = malloc(sizeof(char) * (i - remember + 1))))
+		if (s[i] == '\0')
+			break ;
+		if (!(t[j] = ft_strnew(ft_wrdlen((char *)&s[i], c))))
 			return (NULL);
-		if (j < numberofword)
-			ft_strncpy(ptr[j], &s[remember], i - remember);
-		while (s[i] == c)
-			i++;
-		j++;
+		k = 0;
+		while (s[i] != c && s[i])
+			t[j][k++] = s[i++];
+		t[j++][k] = '\0';
 	}
-	ptr[j] = NULL;
-	return (ptr);
+	t[j] = NULL;
+	return (t);
 }

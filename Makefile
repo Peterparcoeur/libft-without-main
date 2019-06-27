@@ -6,7 +6,7 @@
 #    By: pbodin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/21 14:53:34 by pbodin            #+#    #+#              #
-#    Updated: 2019/06/25 12:31:07 by pbodin           ###   ########.fr        #
+#    Updated: 2019/06/27 19:38:57 by pbodin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS=ft_memalloc.c ft_putstr_fd.c ft_strmapi.c \
 	ft_lstiter.c ft_putnbr.c ft_strlcat.c ft_tolower.c \
 	ft_lstmap.c ft_putnbr_fd.c ft_strlen.c ft_toupper.c \
 	ft_lstnew.c ft_putstr.c ft_strmap.c \
+	ft_wrdc.c ft_wrdlen.c ft_intlen.c \
 
 OBJECTS=ft_memalloc.o ft_putstr_fd.o ft_strmapi.o \
 		ft_atoi.o ft_memccpy.o ft_strcat.o ft_strncat.o \
@@ -43,6 +44,7 @@ OBJECTS=ft_memalloc.o ft_putstr_fd.o ft_strmapi.o \
 		ft_lstiter.o ft_putnbr.o ft_strlcat.o ft_tolower.o \
 		ft_lstmap.o ft_putnbr_fd.o ft_strlen.o ft_toupper.o \
 		ft_lstnew.o ft_putstr.o ft_strmap.o \
+		ft_wrdc.o ft_wrdlen.o ft_intlen.o \
 
 INCLUDES=./
 

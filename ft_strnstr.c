@@ -18,7 +18,7 @@ size_t len)
 	size_t		i;
 	size_t		j;
 	size_t		remember;
-	char	*ptr;
+	char		*ptr;
 
 	i = 0;
 	if (needle[i] == '\0' && i < len)

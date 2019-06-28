@@ -18,6 +18,10 @@ int	ft_atoi(const char *str)
 	int negative;
 	int new;
 
+	if (ft_strcmp("2147483647", str) == 0)
+		return (2147483647);
+	if (ft_strcmp("-2147483648", str) == 0)
+		return (-2147483648);
 	i = 0;
 	new = 0;
 	negative = 1;

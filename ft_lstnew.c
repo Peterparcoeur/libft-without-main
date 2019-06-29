@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 13:23:43 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 18:44:02 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 11:57:57 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		return (new);
 	}
 	if (!(new->content = malloc(content_size)))
-			return (NULL);
+		return (NULL);
 	ft_memcpy(new->content, content, content_size);
 	new->content_size = content_size;
 	return (new);
-}		
+}

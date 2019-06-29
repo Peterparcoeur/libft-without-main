@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 13:14:25 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 22:19:49 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 12:06:26 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	size_t		i;
+	size_t	i;
 	char	*str;
 
 	i = 0;

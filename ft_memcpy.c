@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 12:55:43 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 20:48:25 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 12:00:45 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t		i;
+	size_t	i;
 	char	*str;
 	char	*ptr;
 

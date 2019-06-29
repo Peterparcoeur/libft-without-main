@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/27 19:17:47 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/27 19:46:57 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 12:07:45 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	**ft_strsplit(char const *s, char c)
 	int		k;
 	char	**t;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	j = 0;
 	if (!(t = (char **)malloc(sizeof(char*) * (ft_wrdc((char *)s, c) + 1))))

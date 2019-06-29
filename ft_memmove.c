@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 21:05:48 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 12:01:14 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
+	size_t	i;
 	char	*str;
 	char	*ptr;
 

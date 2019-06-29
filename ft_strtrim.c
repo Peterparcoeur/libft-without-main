@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 13:15:15 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/27 19:49:05 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 12:08:23 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strtrim(char const *s)
 	size_t	k;
 	char	*new;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	k = ft_strlen(s) - 1;
 	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))

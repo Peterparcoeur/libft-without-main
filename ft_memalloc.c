@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 12:53:13 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 20:45:17 by pbodin           ###   ########.fr       */
+/*   Updated: 2019/06/29 11:56:41 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*str;
 
-	if (!(str = malloc(sizeof(void *) * (size /*+ 1*/)))) // CEST PAS UNE STRING ATTENTION
+	if (!(str = malloc(sizeof(void *) * (size))))
 		return (NULL);
-	/*
-	str = 0;
-	MAIS WTF CEST QUOI CA
-	*/
 	ft_bzero(str, size);
 	return (str);
 }

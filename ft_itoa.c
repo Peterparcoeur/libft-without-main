@@ -31,7 +31,7 @@ char	*ft_itoa(int n)
 	while (n != 0 && size >= 0)
 	{
 		reminder = (n % 10) * sign;
-		str[size--] = (reminder > 9) ? (reminder - 10) + 'a' : reminder + '0';
+		str[size--] = reminder + '0';
 		n /= 10;
 	}
 	if (sign < 0)

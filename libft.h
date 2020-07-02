@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/21 14:52:17 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/29 12:22:35 by pbodin           ###   ########.fr       */
+/*   Updated: 2020/06/26 09:30:13 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,10 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_wrdc(char *str, char c);
 int					ft_wrdlen(char *str, char c);
 int					ft_intlen(long long n);
+void				ft_lstadd_front(t_list **alst, t_list *new);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif

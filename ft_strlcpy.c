@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2020/06/30 10:58:59 by pbodin           ###   ########.fr       */
+/*   Created: 2020/06/16 15:10:07 by pbodin            #+#    #+#             */
+/*   Updated: 2020/06/26 12:30:52 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	char	*str;
-	char	*ptr;
+	size_t	j;
 
-	str = (char *)dst;
-	ptr = (char *)src;
-	i = len;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst > src)
+	j = 0;
+	i = 0;
+	if (!dst || !src)
+		return (0);
+	while (src[j])
+		j++;
+	if (dstsize == 0)
+		return (j);
+	while (src[i] && i < dstsize - 1)
 	{
-		while (i--)
-			str[i] = ptr[i];
+		dst[i] = src[i];
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			str[i] = ptr[i];
-			i++;
-		}
-	}
-	return (dst);
+	dst[i] = '\0';
+	return (j);
 }

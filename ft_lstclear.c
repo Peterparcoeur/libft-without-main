@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2020/06/30 10:58:59 by pbodin           ###   ########.fr       */
+/*   Created: 2020/06/26 08:35:26 by pbodin            #+#    #+#             */
+/*   Updated: 2020/06/26 08:35:31 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	i;
-	char	*str;
-	char	*ptr;
+	t_list	*old_elem;
 
-	str = (char *)dst;
-	ptr = (char *)src;
-	i = len;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst > src)
+	if (!del)
+		return ;
+	while (*lst)
 	{
-		while (i--)
-			str[i] = ptr[i];
+		del((*lst)->content);
+		old_elem = *lst;
+		*lst = old_elem->next;
+		free(old_elem);
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			str[i] = ptr[i];
-			i++;
-		}
-	}
-	return (dst);
+	*lst = NULL;
 }

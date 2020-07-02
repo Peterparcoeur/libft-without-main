@@ -6,7 +6,7 @@
 #    By: pbodin <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/21 14:53:34 by pbodin            #+#    #+#              #
-#    Updated: 2019/06/27 19:38:57 by pbodin           ###   ########.fr        #
+#    Updated: 2020/06/26 09:31:03 by pbodin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ SRCS=ft_memalloc.c ft_putstr_fd.c ft_strmapi.c \
 	ft_lstmap.c ft_putnbr_fd.c ft_strlen.c ft_toupper.c \
 	ft_lstnew.c ft_putstr.c ft_strmap.c \
 	ft_wrdc.c ft_wrdlen.c ft_intlen.c \
+	ft_strlcpy.c ft_split.c ft_calloc.c ft_substr.c \
+	ft_lstadd_front.c ft_lstsize.c \
+	ft_lstadd_back.c ft_lstclear.c ft_lstlast.c \
 
 OBJECTS=ft_memalloc.o ft_putstr_fd.o ft_strmapi.o \
 		ft_atoi.o ft_memccpy.o ft_strcat.o ft_strncat.o \
@@ -45,6 +48,9 @@ OBJECTS=ft_memalloc.o ft_putstr_fd.o ft_strmapi.o \
 		ft_lstmap.o ft_putnbr_fd.o ft_strlen.o ft_toupper.o \
 		ft_lstnew.o ft_putstr.o ft_strmap.o \
 		ft_wrdc.o ft_wrdlen.o ft_intlen.o \
+		ft_split.o ft_strlcpy.o ft_calloc.o ft_substr.o \
+		ft_lstadd_front.o ft_lstsize.o \
+		ft_lstadd_back.o ft_lstclear.o ft_lstlast.o \
 
 INCLUDES=./
 

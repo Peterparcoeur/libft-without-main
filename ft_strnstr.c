@@ -6,7 +6,7 @@
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/17 13:12:10 by pbodin            #+#    #+#             */
-/*   Updated: 2019/06/23 22:09:27 by pbodin           ###   ########.fr       */
+/*   Updated: 2020/06/30 11:35:00 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t len)
 	size_t		remember;
 	char		*ptr;
 
+	if (needle[0] == '\0')
+		return ((char *)haystack);
 	i = 0;
 	if (needle[i] == '\0' && i < len)
 		return ((char *)haystack);
@@ -27,11 +29,8 @@ size_t len)
 	{
 		j = 0;
 		remember = i;
-		while (needle[j] && i < len && haystack[i] == needle[j])
-		{
-			i++;
+		while (needle[j] && i < len && haystack[i++] == needle[j])
 			j++;
-		}
 		ptr = (char *)&haystack[remember];
 		if (needle[j] == '\0')
 			return (ptr);

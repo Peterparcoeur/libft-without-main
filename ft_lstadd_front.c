@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddfront.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2020/06/30 10:58:59 by pbodin           ###   ########.fr       */
+/*   Created: 2020/06/22 10:55:56 by pbodin            #+#    #+#             */
+/*   Updated: 2020/06/30 11:40:52 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	size_t	i;
-	char	*str;
-	char	*ptr;
-
-	str = (char *)dst;
-	ptr = (char *)src;
-	i = len;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst > src)
+	if (alst && new)
 	{
-		while (i--)
-			str[i] = ptr[i];
+		new->next = *alst;
+		*alst = new;
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			str[i] = ptr[i];
-			i++;
-		}
-	}
-	return (dst);
 }

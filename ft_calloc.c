@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2020/06/30 10:58:59 by pbodin           ###   ########.fr       */
+/*   Created: 2020/06/16 13:38:55 by pbodin            #+#    #+#             */
+/*   Updated: 2020/06/30 11:02:01 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+void		*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
-	char	*str;
 	char	*ptr;
 
-	str = (char *)dst;
-	ptr = (char *)src;
-	i = len;
-	if (dst == NULL && src == NULL)
+	if (!(ptr = malloc(size * count)))
 		return (NULL);
-	if (dst > src)
-	{
-		while (i--)
-			str[i] = ptr[i];
-	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			str[i] = ptr[i];
-			i++;
-		}
-	}
-	return (dst);
+	ft_memset(ptr, 0, size * count);
+	return (ptr);
 }

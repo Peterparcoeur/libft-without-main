@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbodin <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/17 12:57:11 by pbodin            #+#    #+#             */
-/*   Updated: 2020/06/30 10:58:59 by pbodin           ###   ########.fr       */
+/*   Created: 2020/06/22 12:08:06 by pbodin            #+#    #+#             */
+/*   Updated: 2020/07/02 08:23:51 by pbodin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void		*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_lstsize(t_list *lst)
 {
-	size_t	i;
-	char	*str;
-	char	*ptr;
+	int	i;
 
-	str = (char *)dst;
-	ptr = (char *)src;
-	i = len;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	if (dst > src)
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		while (i--)
-			str[i] = ptr[i];
+		lst = lst->next;
+		i++;
 	}
-	else
-	{
-		i = 0;
-		while (i < len)
-		{
-			str[i] = ptr[i];
-			i++;
-		}
-	}
-	return (dst);
+	return (i);
 }
